@@ -12,11 +12,12 @@
 <h2>Dynamic content</h2>
 
   <p>The library has the following record counts:</p>
-    {% for sp in s_name %}
+
+    {% for sp in s_name %}{% for foo in c_name %}
         <div class="t_student">
-            <tr>{{ sp.Patronymic }}</tr>
+            <tr>{{ sp.Patronymic }}</tr><h1>{{ foo.Model1 }}</h1>
         </div>
-    {% endfor %}
+    {% endfor %}{% endfor %}
 
   <ul>
     <li><strong>Student:</strong> {{ num_student}}</li>

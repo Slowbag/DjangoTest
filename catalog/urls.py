@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('otchet_abit/', views.otchet_abit, name='otchet_abit')
 ]
