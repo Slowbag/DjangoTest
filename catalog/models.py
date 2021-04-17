@@ -72,6 +72,7 @@ class Student(models.Model):
         verbose_name_plural = 'Студенты'
 # Студенты
 
+
 # Специальности бюджет
 class SpecialtyBydhet(models.Model):
     """
