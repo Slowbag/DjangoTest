@@ -1,8 +1,14 @@
 from django.contrib import admin
-from .models import Student, SpecialtyBydhet, ConstructZapros
+from .models import Student, SpecialtyBydhet, ConstructZapros, ConstructOtchetov
 
 
 # Register your models here.
+@admin.register(ConstructZapros)
+class ConstructOtchetovAdmin(admin.ModelAdmin):
+    list_display = ('Model1', 'Model2', 'Model3', 'Model4', 'Model5', 'Model6',
+                    'Model7', 'Model8', 'Model9', 'Model10')
+
+
 @admin.register(ConstructZapros)
 class ConstructZaprosAdmin(admin.ModelAdmin):
     list_display = ('Model1', 'Model2', 'Model3', 'Model4', 'Model5', 'Model6',
