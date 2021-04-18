@@ -1,20 +1,206 @@
 {% extends "base_generic.html" %}
-{% block content %}
 <!-- Добавление дополнительного статического CSS файла -->
-    {% load static %}
+{% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block content %}{% for sp in s_name %}{% for foo in c_name %}
+    <h1>Заявление</h1>
+    <body>
+  <div class="up">
+    <p>{{ foo.Model1}}</p>
+  </div><br><br><br><br><br>
+  <p align="center">ЗАЯВЛЕНИЕ О ПРИЕМЕ</p>
+  <table class="">
+    <tr>
+      <td>от:<br> Фамилия: <u>{{ sp.Surname }}</u><br> Имя: <u>{{ sp.Name }}</u> <br>Отчество: <u>{{sp.Patronymic}}</u>
+          <br>Дата рождения:<u>{{sp.Date_of_birth}}</u> <br>Место рождения: <u>{{ sp.Place_of_birth }}</u>.</td>
+      <td>Гражданство: <u>{{ sp.Citizenship }}</u><br> Документ, удостоверяющий личность: <u>{{ sp.Identity_document }}</u>
+          <br> Когда выдан: <u>{{ sp.When_issued }}</u> <br>Кем выдан: <u>{{ sp.Issued_by }}</u></td>
+    </tr>
+  </table>
+    <p class="long">{{ foo.Model2 }} <u>{{ sp.residing_at_the_address }}</u><br>
 
-<h1>Заявление</h1>
+        личный телефон <u>{{ sp.personal_phone }}</u> домашний (при наличии) _________________________<br>
 
-    {% for sp in s_name %}{% for foo in c_name %}
-        <div class="t_student">
-            <p>{{ sp.Patronymic }}</p><p>{{ foo.Model1 }}</p>
-        </div>
+
+    Личный адрес электронной почты __________________________________
+  </p><br><br><br>
+  <p class="long2">{{ foo.Model3 }}
+  </p><br>
+  <p class="long">1.(приоритетная профессия / специальность): 09.02.07 Информационные системы и программирование
+    (о-<br>з) со сроком обучения 3 года 10 месяцев на бюджетной основе.<br>
+
+    2. (дополнительная профессия / специальность):<br>
+    ___________________________________________________________________________________<br>
+
+    3. (дополнительная профессия / специальность):<br>
+    ___________________________________________________________________________________<br>
+
+    4. (дополнительная профессия / специальность) ____________________________________________________________<br>
+
+    ______________________________________________________________________________________________________<br>
+    <label
+      class="container">бюджетной
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">платной основе (указать что-то одно)
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </p><br><br><br><br><br><br><br><br>
+  <p class="long">по очной форме обучения
+
+    О себе сообщаю следующее:<br>
+
+    Окончил (а) в 2010 году: МОУ СОШ,<u>Муниципальное общеобразовательное учреждение<br> гимназия №1 имени А.С. Пушкина
+      города Томска Томской области</u>;
+
+    Уровень образования: 11 классов<br>
+
+    Документ об образовании: Аттестат,<u> Номер 70 АБ 0002004<br></u>
+
+    Английский язык: Да
+  </p><br><br><br><br>
+  <p class="long">Наличие договора о целевом обучении:
+    <label class="container">имеется <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+
+    <label class="container">не имеется
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </p>
+ <br>
+  <p class="long">
+    <label class="container">Победитель
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">призёр
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+      <label class="container">олимпиад всеросийского
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">областного
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        уровня_________________________
+      </label>
+  </p>
+  <p class="long3"><br>
+    (наименование предмета)
+  </p>
+  <br>
+  <p class="long">
+    <label class="container">Победитель
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">призёр
+      <input type="checkbox">
+      чемпионата «Молодые профессионалы (WSR)» в компетенции______________________
+    </label>
+
+  </p><br>
+  <p class="long">
+    <label class="container">Победитель
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">призёр
+      <input type="checkbox">
+      <span class="checkmark"></span>
+      чемпионата «Абилимпикс» в компетенции _______________________________________
+    </label>
+  </p><br>
+  <p class="long">Общежитие:<u>Нет</u></p><br>
+  <p class="long">Отношусь к категории:<br>
+
+    дети-сироты, дети, оставшиеся без попечения родителей, лица из их числа: <u>нет</u><br>
+    <label class="container">инвалиды
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">лица с ОВЗ (имеется ПМПК)
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </p><br><br><br>
+  <p class="long">
+    <strong>Дополнительно о себе сообщаю:</strong><br>
+
+    Творческие достижения:<br>
+    <label class="container">хореография
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>______________________________________________________<br>
+    <label class="container">вокальные данные
+      <input type="checkbox">
+      <span class="checkmark"></span>______________________________________________________<br>
+    </label>
+      <label class="container">участие в КВН
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>______________________________________________________<br>
+      <label class="container">художественные навыки
+        <input type="checkbox">
+        <span class="checkmark"></span><br>
+      </label>
+        <label class="container">участие в театральных постановках
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+    <br><br>
+    Спортивные достижения:<br>
+    1. _________________________ _________________________<br>
+    2. _________________________ _________________________<br>
+    3. _________________________ _________________________<br><br>
+    <strong>Сведения о родителях</strong> (фамилия, имя, отчество; место жительства; кем и где работают, наименование предприятия, <br>организации, занимая должность):<br>
+    Отец: ________________________________________________________________________________________________________________________<br>
+
+Личный контактный телефон: ______________________________________________________________________________________________<br>
+
+Мать:_________________________________________________________________________________________________________________________<br>
+
+Личный контактный телефон: ___________________________________________________________________________________________<br>
+
+Адрес электронной почты родителей (для официальной переписки)____________________________________________<br>
+Среднее профессиональное образование получаю
+<label class="container">впервые
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">не впервые
+  <input type="checkbox">
+  <span class="checkmark"></span>____________________<br><br>
+
+  С копией лицензии на право осуществления образовательной деятельности,<br>
+  копией свидетельства о государственной аккредитации, с положением об<br>
+  обработке и защите персональных данных, правилами приема и условиями<br>
+  обучения в ОГБПОУ «ТТИТ», правилами подачи апелляций ознакомлен(а)____________________<br><br>
+  <strong>С датой подачи (предоставления) уведомления о намерении обучаться в ОГБПОУ «Томский техникум информационных технологий» ознакомлен(а):</strong><br><br>
+- на очную форму обучения за счет средств областного бюджета (в рамках контрольных цифр приема)<strong> с 26 августа 2020 года до 13:00 28 августа 2020 года</strong>
+_______________<br><br>
+- на очную форму обучения по договорам об оказании платных образовательных услуг <strong> с 26 августа 2020 года до 13:00 29 августа 2020 года</strong>
+_______________<br><br>
+- на очно-заочную форму обучения<strong> с 26 августа 2020 года до 16 октября 2020 года</strong>
+_______________<br><br>
+Согласен(а) на обработку своих персональных данных в порядке,<br>
+установленном Федеральным законом от 27 июля 2006 г. № 152-ФЗ<br>
+«О персональных данных»_______________<br><br><br><br><br>
+
+
+
+
     {% endfor %}{% endfor %}
 
   <ul>
     <li><strong>Студенты:</strong> {{ num_student}}</li>
-
   </ul>
 
 {% endblock %}

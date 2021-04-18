@@ -21,7 +21,7 @@ def index(request):
     return render(
         request,
         'index.html',
-        context={'s_name': s_name, 'c_name': c_name})
+        context={'s_name': s_name, 'c_name': c_name, 'num_student': num_student})
 
 
 def otchet_abit(request):
