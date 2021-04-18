@@ -4,27 +4,29 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-{% block content %}
+{% block content %}{% for co in co_name %}{% for s in s_name %}
 <h1>Отчет абитуриентов</h1>
+
+    <p>{{ co.Model1}}</p>
 
   <table>
     <tr>
-        <td colspan="13">Информация о приеме в разрезе специальностей на 15 Августа 2018 г.</td>
+        <td colspan="13">{{ co.Model2}}</td>
     </tr>
     <tr>
-        <td colspan="13">- по программам подготовки специалистов среднего звена ( за счёт бюджетных средств)</td>
+        <td colspan="13"> - по программам подготовки специалистов среднего звена ( за счёт бюджетных средств)</td>
     </tr>
     <tr>
-        <td colspan="5">информация об образовательной программе</td>
-        <td colspan="4">прием документов</td>
-        <td colspan="4">зачисление</td>
+        <td colspan="5">{{ co.Model3}}}</td>
+        <td colspan="4">{{ co.Model4 }}</td>
+        <td colspan="4">{{ co.Model5 }}</td>
     </tr>
     <tr>
-        <td>№ п/п</td>
-        <td>Наименование специальности</td>
-        <td>форма обучения - указать: очно/ очно-заочно/ заочно</td>
-        <td>срок обучения</td>
-        <td> базовое образование</td>
+        <td>{{ co.Model6 }}</td>
+        <td>{{ co.Model7 }}</td>
+        <td>{{ co.Model8 }}</td>
+        <td>{{ co.Model9 }}</td>
+        <td>{{ co.Model10 }}</td>
         <td>принято документов всего</td>
         <td>Войти средний балл аттестата</td>
         <td colspan="2">в т.ч. принято документов от поступающих, имеющих статус </td>
@@ -33,27 +35,27 @@
         <td>средний балл аттестата</td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>11</td>
+        <td>12</td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>1</td>
+        <td>Сетевое и системное администрирование</td>
+        <td>очная</td>
+        <td>3 года 10 мес.</td>
+        <td>9 классов</td>
+        <td>{{ num_student }}</td>
         <td></td>
         <td></td>
         <td></td>
@@ -214,10 +216,6 @@
     </tr>
 </table>
 
-    {% for sp in s_name %}{% for foo in c_name %}
-        <div class="t_student">
-
-        </div>
     {% endfor %}{% endfor %}
 
   <ul>
