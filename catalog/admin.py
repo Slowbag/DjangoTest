@@ -3,7 +3,7 @@ from .models import Student, SpecialtyBydhet, ConstructZapros, ConstructOtchetov
 
 
 # Register your models here.
-@admin.register(ConstructZapros)
+@admin.register(ConstructOtchetov)
 class ConstructOtchetovAdmin(admin.ModelAdmin):
     list_display = ('Model1', 'Model2', 'Model3', 'Model4', 'Model5', 'Model6',
                     'Model7', 'Model8', 'Model9', 'Model10')
