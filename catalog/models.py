@@ -7,6 +7,36 @@ import uuid  # Required for unique book instances
 # Create your models here.
 
 # Конструктор запросов
+class ConstructOtchetov(models.Model):
+    """
+    Model representing a Student_Zayavlenie (e.g. Science Fiction, Non Fiction).
+    """
+    Model1 = models.TextField(max_length=100,
+                              help_text="Приложение № 3 к распоряжению ДПО ТО от 15 Августа 2018 г. № ____")
+    Model2 = models.CharField(max_length=100,
+                              help_text=" Информация о приеме в разрезе специальностей на 15 Августа 2018 г.")
+    Model3 = models.CharField(max_length=100, help_text="информация об образовательной программе")
+    Model4 = models.CharField(max_length=100, help_text="прием документов ")
+    Model5 = models.CharField(max_length=100, help_text="зачисление")
+    Model6 = models.CharField(max_length=100, help_text="№ п/п")
+    Model7 = models.CharField(max_length=100, help_text="Наименование специальности")
+    Model8 = models.CharField(max_length=100, help_text="форма обучения - указать: очно/ очно-заочно/ заочно")
+    Model9 = models.CharField(max_length=100, help_text="срок обучения")
+    Model10 = models.CharField(max_length=100, help_text="базовое образование")
+
+    def __str__(self):
+        """
+        String for representing the Model object (in Admin site etc.)
+        """
+        return self.Model1
+
+    class Meta:
+        verbose_name = 'Конструктор отчетов'
+        verbose_name_plural = 'Конструктор отчетов'
+# Конструктор запросов
+
+
+# Конструктор запросов
 class ConstructZapros(models.Model):
     """
     Model representing a Student_Zayavlenie (e.g. Science Fiction, Non Fiction).

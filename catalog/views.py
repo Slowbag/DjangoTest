@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Student, ConstructZapros
+from .models import Student, ConstructZapros, ConstructOtchetov
 
 
 # Create your views here.
@@ -30,7 +30,7 @@ def otchet_abit(request):
         """
     # Генерация "количеств" некоторых главных объектов
     s_name = Student.objects.all()
-    c_name = ConstructZapros.objects.all()
+    co_name = ConstructOtchetov.objects.all()
     num_student = Student.objects.all().count()
 
     # Отрисовка HTML-шаблона index.html с данными внутри
@@ -39,4 +39,4 @@ def otchet_abit(request):
     return render(
         request,
         'otchet_abit.html',
-        context={'s_name': s_name, 'c_name': c_name})
+        context={'s_name': s_name, 'co_name': co_name, 'num_student': num_student})
